@@ -8,14 +8,62 @@ Ext.define('ThemerContestApp.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.main',
-
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+    listen : {
+        controller : {
+            '#' : {
+                unmatchedRoute : 'onRouteChange'
+            }
+        }
+    },
+    lastView : null,
+    routes : {
+        ':node' : 'onRouteChange'
     },
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
+    platformConfig: {
+		phone: {
+			platform: 'phone'
+		}
+	}, 
+    init : function () {
+        if (this.platform !== 'phone') {
+            var navigation = this.lookupReference('navigation');
+            var store = navigation.getStore();
+            var node = store.findNode('xtype', 'dashboard');
+            navigation.setSelection(node);
         }
-    }
+    },
+    onSelectionChange : function (tree, node) {
+        var to = node && node.get('xtype');
+        if (to) {
+            this.redirectTo (to);
+        }
+    },
+    
+    onMainViewRender : function () {
+        console.log('view rendered');
+    },
+    setCurrentView : function (xtype) {
+        if (this.platform !== 'phone') {
+            var refs = this.getReferences();
+            this.contentCard = refs.contentCard;
+            this.navigation = refs.navigation;
+
+            var node = this.navigation.getStore().findNode('xtype', xtype);
+            item = this.contentCard.child('component[xtype=' + xtype + ']');
+            if (xtype === 'dashboard') {
+                item = this.contentCard.add({
+                    xtype : xtype
+                });
+            } else {
+                item = this.contentCard.add({xtype : xtype});
+            }
+            this.contentCard.setActiveItem(xtype);
+            this.navigation.setSelection(node);
+        }
+    },
+
+    onRouteChange : function (id) {
+        this.setCurrentView(id);
+    }   
 });
