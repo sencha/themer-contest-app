@@ -3,7 +3,8 @@ Ext.define('ThemerContestApp.profile.Phone', {
 
 	views: {
 		main: 'ThemerContestApp.view.phone.main.Main',
-		dashboard : 'ThemerContestApp.view.phone.main.Dashboard'
+		dashboard : 'ThemerContestApp.view.phone.main.Dashboard',
+		menu : 'ThemerContestApp.view.phone.main.Sidebar'
 	},
 
 	isActive: function () {
