@@ -15,6 +15,12 @@ Ext.define('ThemerContestApp.view.main.MainController', {
             }
         }
     },
+    control : {
+        '#' : {
+            menuitemselect : 'onMenuItemSelect'
+        }
+    },
+
     lastView : null,
     routes : {
         ':node' : 'onRouteChange'
@@ -31,7 +37,7 @@ Ext.define('ThemerContestApp.view.main.MainController', {
             var store = navigation.getStore();
             var node = store.findNode('xtype', 'dashboard');
             navigation.setSelection(node);
-        }
+        } 
     },
     onSelectionChange : function (tree, node) {
         var to = node && node.get('xtype');
@@ -63,7 +69,34 @@ Ext.define('ThemerContestApp.view.main.MainController', {
         }
     },
 
+    setPhoneView : function (xtype) {
+        if (this.platform === 'phone') {
+            item = this.contentCard.child('component[xtype=' + xtype + ']');
+            this.contentCard.setActiveItem(xtype);
+            this.phoneBar.setTitle(xtype.toUpperCase());
+            Ext.Viewport.toggleMenu('left');
+            var refs = this.getReferences();
+        }
+    },
+
     onRouteChange : function (id) {
         this.setCurrentView(id);
+    },
+
+    onMenuItemSelect : function (btn) {
+        var item = btn.getText().toLowerCase();
+        this.setPhoneView(item);
+    },
+
+    onPhoneViewRender : function (pnl) {
+        var refs = this.getReferences();
+        this.contentCard = refs.contentCard;
+        this.phoneBar = refs.phonebar;
+
+        var item = this.contentCard.add({
+            xtype : 'dashboard'
+        });
+        this.phoneBar.setTitle('DASHBOARD');
+        this.contentCard.setActiveItem(item);
     }   
 });
