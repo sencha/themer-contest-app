@@ -6,56 +6,43 @@
  * TODO - Replace the content of this view to suit the needs of your application.
  */
 Ext.define('ThemerContestApp.view.main.Main', {
-    extend: 'Ext.tab.Panel',
-    xtype: 'app-main',
-
-    requires: [
-        'Ext.MessageBox',
-
-        'ThemerContestApp.view.main.MainController',
-        'ThemerContestApp.view.main.MainModel',
-        'ThemerContestApp.view.main.List'
-    ],
-
-    controller: 'main',
-    viewModel: 'main',
-
-    defaults: {
-        tab: {
-            iconAlign: 'top'
-        },
-        styleHtmlContent: true
+    extend : 'Ext.Container',
+    xtype : 'main',
+    reference : 'main',
+    controller : 'main',
+    viewModel : 'main',
+    listeners : {
+        render : 'onMainViewRender'
     },
-
-    tabBarPosition: 'bottom',
-
-    items: [
+    layout : {
+        type : 'vbox',
+        align : 'stretch'
+    },
+    items : [
         {
-            title: 'Home',
-            iconCls: 'x-fa fa-home',
-            layout: 'fit',
-            // The following grid shares a store with the classic version's grid as well!
-            items: [{
-                xtype: 'mainlist'
-            }]
-        },{
-            title: 'Users',
-            iconCls: 'x-fa fa-user',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Groups',
-            iconCls: 'x-fa fa-users',
-            bind: {
-                html: '{loremIpsum}'
-            }
-        },{
-            title: 'Settings',
-            iconCls: 'x-fa fa-cog',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            xtype : 'container',
+            docked : 'top',
+            height : 50,
+            style : {
+                backgroundColor : '#5fa2dd',
+                color : 'white',
+                fontWeight : 'bold'
+            },
+            padding : '15 0 0 10',
+            items : [
+                {
+                    html : 'Conference Manager Pro'
+                }
+            ]
+        },
+        {
+            xtype : 'sidebar',
+            docked : 'left'
+        },
+        {
+            xtype : 'content',
+            reference : 'contentCard',
+            flex : 1
         }
     ]
 });
