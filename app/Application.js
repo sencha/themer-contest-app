@@ -7,22 +7,24 @@ Ext.define('ThemerContestApp.Application', {
     extend: 'Ext.app.Application',
     
     name: 'ThemerContestApp',
-
+    requires : [
+        'ThemerContestApp.*'
+    ],
     stores: [
         // TODO: add global / shared stores here
+        'NavigationStore'
     ],
-    
+    profiles : ['Phone', 'Tablet'],
+
+    showViewportCard: function(xtype) {
+		item = Ext.Viewport.child('component[xtype=' + xtype + ']');
+		if (!item) {
+			Ext.Viewport.add({ xtype: xtype });
+		}
+		Ext.Viewport.setActiveItem(xtype);
+	},
     launch: function () {
         // TODO - Launch the application
-    },
-
-    onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-            function (choice) {
-                if (choice === 'yes') {
-                    window.location.reload();
-                }
-            }
-        );
+        this.showViewportCard('main');
     }
 });
