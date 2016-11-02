@@ -19,12 +19,6 @@ Ext.define('ThemerContestApp.view.main.Main', {
             xtype : 'container',
             docked : 'top',
             height : 50,
-            style : {
-                backgroundColor : '#5fa2dd',
-                color : 'white',
-                fontWeight : 'bold'
-            },
-            padding : '15 0 0 10',
             items : [
                 {
                     html : 'Conference Manager Pro'

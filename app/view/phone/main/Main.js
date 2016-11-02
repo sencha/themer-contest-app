@@ -30,9 +30,6 @@ Ext.define('ThemerContestApp.view.phone.main.Main', {
                 {
                     xtype : 'toolbar',
                     reference : 'phonebar',
-                    style : {
-                        background : '#5fa2dd'
-                    },
                     items : [
                         {
                             iconCls : 'x-fa fa-navicon',

@@ -8,8 +8,6 @@ extend : 'Ext.grid.Grid',
     store : 'Event',
     xtype : 'morning',
     border : true,
-    style : 'border:1px solid #5fa2dd',
-    margin : '10 10 10 10',
     title : 'Events - Morning',
     items : [
         {

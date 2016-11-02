@@ -5,12 +5,10 @@
  */
 Ext.define('ThemerContestApp.view.main.Attendees', {
     extend : 'Ext.grid.Grid',
-    margin : '10 10 10 10',
     xtype : 'attendees',
     title : 'Attendees',
     store : 'Attendee',
     border : true,
-    style : 'border:1px solid #5fa2dd',
     items : [
         {
             xtype : 'toolbar',
