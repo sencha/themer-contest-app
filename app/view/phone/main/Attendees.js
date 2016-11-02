@@ -102,7 +102,7 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
         }
     ],
     plugins : {
-        type : 'gridrowexpander'
+        type : 'rowexpander'
     },
     itemConfig : {
         body : {

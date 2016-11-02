@@ -16,6 +16,8 @@ Ext.define('ThemerContestApp.model.DoList', {
     proxy : {
         type : 'ajax',
         url : '../resources/data/dolist.json',
-        reader : 'json'
+        reader : {
+            type : 'json'
+        }
     }
 });

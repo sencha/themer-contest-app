@@ -30,17 +30,12 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                     width : '1%'
                 },
                 {
-                    xtype : 'panel',
+                    xtype : 'registrations',
                     header : true,
                     width : '75%',
                     border : true,
-                    title : 'New Registrations',
-                    items : [
-                        {
-                            xtype : 'registrations',
-                            minHeight : 200
-                        }
-                    ]
+                    style : 'border: 1px solid #5fa2dd',
+                    title : 'New Registrations'
                 }
             ]
         },
@@ -66,28 +61,24 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
             xtype : 'container',
             flex : 1,
             layout : {
-                type : 'hbox'
+                type : 'hbox',
+                align : 'stretch'
             },
             items : [
                 {
-                    xtype : 'panel',
-                    header : true,
+                    xtype : 'dolist',
                     title : 'To Do List',
-                    width : '75%',
                     border : true,
-                    items : [
-                        {
-                            xtype : 'dolist',
-                            minHeight : 200
-                        }
-                    ]
+                    width : '75%',
+                    style : 'border: 1px solid #5fa2dd'
                 },
                 {
                     xtype : 'spacer',
                     width : '1%'
-                },
+                },                
                 {
                     xtype : 'panel',
+                    width : '24%',
                     header : true,
                     title : 'Total Registrations',
                     width : '24%',
@@ -104,10 +95,10 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                             text : '736/1000 Registered',
                             width : 250
                         }
-                    ]                    
+                    ]
                 }
             ]
-        }        
+        }       
    
     ]
 })
