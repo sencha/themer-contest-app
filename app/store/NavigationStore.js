@@ -1,3 +1,8 @@
+/**
+ * Navigation store
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.store.NavigationStore', {
 	extend : 'Ext.data.TreeStore',
 	storeId : 'NavigationStore',
@@ -9,7 +14,7 @@ Ext.define('ThemerContestApp.store.NavigationStore', {
 		children : [
 			{
 				text : 'Dashboard',
-				iconCls : 'x-fa fa-desktop',
+				iconCls : 'x-fa fa-dashboard',
 				xtype : 'dashboard',
 				routeId : 'dashboard',
 				leaf : true
@@ -22,7 +27,7 @@ Ext.define('ThemerContestApp.store.NavigationStore', {
 			},
 			{
 				text : 'Events',
-				iconCls : 'x-fa fa-users',
+				iconCls : 'x-fa fa-bolt',
 				expanded : true,
 				children : [
 					{ text : 'Morning', xtype : 'morning', leaf : true},
@@ -32,7 +37,7 @@ Ext.define('ThemerContestApp.store.NavigationStore', {
 			},
 			{
 				text : 'Attendees',
-				iconCls : 'x-fa fa-users',
+				iconCls : 'x-fa fa-user-plus',
 				xtype : 'attendees',
 				leaf : true
 			}			

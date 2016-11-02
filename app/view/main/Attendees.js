@@ -1,3 +1,8 @@
+/**
+ * Attendees view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.main.Attendees', {
     extend : 'Ext.Panel',
     margin : '10 10 10 10',

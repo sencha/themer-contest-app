@@ -1,6 +1,12 @@
+/**
+ * Phone profile
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.profile.Phone', {
 	extend: 'Ext.app.Profile',
-
+	
+	// phone views
 	views: {
 		main: 'ThemerContestApp.view.phone.main.Main',
 		dashboard : 'ThemerContestApp.view.phone.main.Dashboard',
@@ -9,6 +15,10 @@ Ext.define('ThemerContestApp.profile.Phone', {
 		attendees : 'ThemerContestApp.view.phone.main.Attendees'
 	},
 
+	/**
+	 * @method
+	 * Check if phone profile is active
+	 */
 	isActive: function () {
 		return Ext.platformTags.phone;
 	}

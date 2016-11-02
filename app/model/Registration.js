@@ -1,3 +1,8 @@
+/**
+ * Registration model class
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.model.Registration', {
     extend : 'Ext.data.Model',
     fields : [

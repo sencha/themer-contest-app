@@ -1,3 +1,8 @@
+/**
+ * Attendees view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.phone.main.Attendees', {
     extend : 'Ext.grid.Grid',
     store : 'Attendee',

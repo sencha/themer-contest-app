@@ -1,3 +1,8 @@
+/**
+ * Navigation component
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContetApp.view.main.Navigation', {
     extend : 'Ext.list.Tree',
     xtype : 'navigation',

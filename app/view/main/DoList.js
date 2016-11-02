@@ -1,3 +1,8 @@
+/**
+ * DoList view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.main.DoList', {
     extend : 'Ext.grid.Grid',
     store : 'DoList',

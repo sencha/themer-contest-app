@@ -1,3 +1,8 @@
+/**
+ * Events view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.phone.main.Events', {
     extend : 'Ext.grid.Grid',
     store : 'Event',

@@ -1,3 +1,8 @@
+/**
+ * Registration store
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.store.Registration', {
     extend : 'Ext.data.Store',
     autoLoad : true,

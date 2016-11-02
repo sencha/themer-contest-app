@@ -1,3 +1,8 @@
+/**
+ * Dashboard view (tablet)
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.main.Dashboard', {
     extend : 'Ext.Container',
     xtype : 'dashboard',
@@ -32,7 +37,8 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                     title : 'New Registrations',
                     items : [
                         {
-                            xtype : 'registrations'
+                            xtype : 'registrations',
+                            minHeight : 200
                         }
                     ]
                 }
@@ -71,7 +77,8 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                     border : true,
                     items : [
                         {
-                            xtype : 'dolist'
+                            xtype : 'dolist',
+                            minHeight : 200
                         }
                     ]
                 },

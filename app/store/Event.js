@@ -1,3 +1,8 @@
+/**
+ * Events store
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.store.Event', {
     extend : 'Ext.data.Store',
     autoLoad : true,
