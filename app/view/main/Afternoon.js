@@ -1,5 +1,5 @@
 /**
- * Attendees view
+ * Afternoon view
  * @author Ritesh Patel
  * @email ritesh.patel@sencha.com
  */
