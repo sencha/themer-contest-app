@@ -1,7 +1,7 @@
-Ext.define('ThemerContestApp.view.main.Speakers', {
+Ext.define('ThemerContestApp.view.main.Afternoon', {
     extend : 'Ext.Panel',
-    xtype : 'speakers',
-    title : 'Speakers',
+    xtype : 'afternoon',
+    title : 'Events - Afternoon',
     margin : '10 10 10 10',
     border : true,
     items : [
@@ -10,7 +10,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
             items : [
                 {
                     iconCls : 'x-fa fa-plus',
-                    text : 'Add Speaker',
+                    text : 'Add Event',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -18,9 +18,8 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                 floated : true,
                                 modal : true,
                                 hideOnMaskTap : true,
-                                width : 320,
-                                height : 350,
-                                autoScroll : true,
+                                width : 400,
+                                height : 275,
                                 showAnimation : {
                                     type : 'popIn',
                                     duration : 250,
@@ -36,7 +35,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                     {
                                         xtype : 'formpanel',
                                         padding : 10,
-                                        title : 'Add Speaker',
+                                        title : 'Add Event',
                                         defaults : {
                                             labelWidth : 120
                                         },
@@ -66,16 +65,19 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Name'
+                                                label : 'Session Title'
+                                            },
+                                            {
+                                                xtype : 'datepickerfield',
+                                                label : 'Date'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Job Title'
+                                                label : 'Time'
                                             },
                                             {
-                                                xtype : 'textareafield',
-                                                rows : 2,
-                                                label : 'Bio'
+                                                xtype : 'textfield',
+                                                label : 'Location'
                                             }
                                         ]
                                     }
@@ -83,24 +85,13 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                             });
                         }
                         this.overlay.show();
-                    }                    
+                    }
                 }
             ]  
         },
         {
-            xtype : 'list',
-            itemTpl : '{name}<br /><font style="color:#a0a0a0">{job_title}</font>',
-            store : 'Speaker',
-            height : 450,
-            scrollable : 'y',
-            onItemDisclosure : function (record, btn) {
-                var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
-                console.log('main ', main);
-                if (main) {
-                    main.fireEvent('speakerselect', record, btn);
-                }
-                
-            }
+            xtype : 'events',
+            minHeight : 400
         }
-    ]
-});
+    ]    
+})

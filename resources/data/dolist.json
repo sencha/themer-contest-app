@@ -1,0 +1,8 @@
+[
+    {"name" : "Send email", "done" : true},
+    {"name" : "Write blog", "done" : false},
+    {"name" : "Book flight and hotel", "done" : true},
+    {"name" : "Register", "done" : false},    
+    {"name" : "Tweet about conference", "done" : true},
+    {"name" : "Perpare for talk", "done" : false}
+]

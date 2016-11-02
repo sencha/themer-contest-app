@@ -1,16 +1,16 @@
-Ext.define('ThemerContestApp.view.main.Speakers', {
-    extend : 'Ext.Panel',
-    xtype : 'speakers',
-    title : 'Speakers',
-    margin : '10 10 10 10',
-    border : true,
+Ext.define('ThemerContestApp.view.phone.main.Attendees', {
+    extend : 'Ext.grid.Grid',
+    store : 'Attendee',
+    xtype : 'attendees',
+    requires : ['Ext.grid.plugin.RowExpander'],
+    hideHeaders: true,
     items : [
         {
             xtype : 'toolbar',
             items : [
                 {
+                    text : 'Add Attendee',
                     iconCls : 'x-fa fa-plus',
-                    text : 'Add Speaker',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -19,7 +19,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                 modal : true,
                                 hideOnMaskTap : true,
                                 width : 320,
-                                height : 350,
+                                height : 300,
                                 autoScroll : true,
                                 showAnimation : {
                                     type : 'popIn',
@@ -36,7 +36,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                     {
                                         xtype : 'formpanel',
                                         padding : 10,
-                                        title : 'Add Speaker',
+                                        title : 'Add Attendee',
                                         defaults : {
                                             labelWidth : 120
                                         },
@@ -73,9 +73,8 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                                 label : 'Job Title'
                                             },
                                             {
-                                                xtype : 'textareafield',
-                                                rows : 2,
-                                                label : 'Bio'
+                                                xtype : 'textfield',
+                                                label : 'Email'
                                             }
                                         ]
                                     }
@@ -83,24 +82,30 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                             });
                         }
                         this.overlay.show();
-                    }                    
+                    }
+
                 }
-            ]  
-        },
-        {
-            xtype : 'list',
-            itemTpl : '{name}<br /><font style="color:#a0a0a0">{job_title}</font>',
-            store : 'Speaker',
-            height : 450,
-            scrollable : 'y',
-            onItemDisclosure : function (record, btn) {
-                var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
-                console.log('main ', main);
-                if (main) {
-                    main.fireEvent('speakerselect', record, btn);
-                }
-                
-            }
+            ],
+            docked : 'top'
         }
-    ]
+    ],  
+    columns : [
+        {
+            text : 'Name',
+            dataIndex : 'name',
+            flex : 1
+        }
+    ],
+    plugins : {
+        type : 'gridrowexpander'
+    },
+    itemConfig : {
+        body : {
+            tpl : [
+                '{job_title}<br />',
+                '<a href="mailto:{email}">{email}</a><br />'
+            ]
+        }
+    }
+    
 });
