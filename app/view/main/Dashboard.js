@@ -34,7 +34,6 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                     header : true,
                     width : '75%',
                     border : true,
-                    style : 'border: 1px solid #5fa2dd',
                     title : 'New Registrations'
                 }
             ]
@@ -69,8 +68,7 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                     xtype : 'dolist',
                     title : 'To Do List',
                     border : true,
-                    width : '75%',
-                    style : 'border: 1px solid #5fa2dd'
+                    width : '75%'
                 },
                 {
                     xtype : 'spacer',

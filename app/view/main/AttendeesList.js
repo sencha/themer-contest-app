@@ -8,8 +8,6 @@ Ext.define('ThemerContestApp.view.main.AttendeesList', {
     store : 'Attendee',
     xtype : 'attendeeslist',
     border : true,
-    style : 'border:1px solid #5fa2dd',
-    margin : '10 10 10 10',
     items : [
         {
             xtype : 'toolbar',
