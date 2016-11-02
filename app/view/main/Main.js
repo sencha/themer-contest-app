@@ -18,6 +18,7 @@ Ext.define('ThemerContestApp.view.main.Main', {
         type : 'vbox',
         align : 'stretch'
     },
+    itemId : 'app-main',
     items : [
         {
             xtype : 'container',

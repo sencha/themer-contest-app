@@ -1,0 +1,7 @@
+[
+    {"title" : "Registration", "track" : "Morning", "time" : "Monday 9:00AM-12:00PM", "location" : "Aria Resort & Casino in Las Vegas"},
+    {"title" : "Sencha ExtJS Jumpstart Training", "track" : "Afternoon", "time" : "Monday 1:00PM-3:00PM", "location" : "Aria Resort & Casino in Las Vegas"},
+    {"title" : "Sencha Test Training", "track" : "Afternoon", "time" : "Monday 3:30PM-4:30PM", "location" : "Aria Resort & Casino in Las Vegas"},
+    {"title" : "Tech Talk: ExtJS and Angular 2", "track" : "Evening", "time" : "Monday 7:00PM-9:00PM", "location" : "Aria Resort & Casino in Las Vegas"},
+    {"title" : "Design Methods for Improved Product Development", "track" : "Evening", "time" : "Monday 5:00PM-7:00PM", "location" : "Aria Resort & Casino in Las Vegas"}
+]

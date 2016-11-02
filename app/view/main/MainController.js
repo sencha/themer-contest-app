@@ -17,7 +17,8 @@ Ext.define('ThemerContestApp.view.main.MainController', {
     },
     control : {
         '#' : {
-            menuitemselect : 'onMenuItemSelect'
+            menuitemselect : 'onMenuItemSelect',
+            speakerselect : 'onSpeakerSelect'
         }
     },
 
@@ -98,5 +99,31 @@ Ext.define('ThemerContestApp.view.main.MainController', {
         });
         this.phoneBar.setTitle('DASHBOARD');
         this.contentCard.setActiveItem(item);
-    }   
+    },
+
+    onSpeakerSelect : function (record, btn) {
+        console.log('speaker selected');
+        if (!this.speakerDetail) {
+            this.speakerDetail = this.contentCard.add({
+                xtype : 'speakerdetail'
+            });
+        }
+
+        this.contentCard.setActiveItem(this.speakerDetail);
+        var refs = this.getReferences();
+        var bioCard = refs.bioCard;
+        var sessionCard = refs.sessionCard;
+
+        bioCard.setData({
+                            name : record.get('name'),
+                            job_title : record.get('job_title'),
+                            bio : record.get('bio')
+                        });
+        sessionCard.setData({
+                            session_title : record.get('session_title'),
+                            name : record.get('name'),
+                            session_description : record.get('session_description')
+                        });
+        
+    }
 });
