@@ -19,7 +19,23 @@ Ext.define('ThemerContestApp.store.NavigationStore', {
 				iconCls : 'x-fa fa-users',
 				xtype : 'speakers',
 				leaf : true
-			}
+			},
+			{
+				text : 'Events',
+				iconCls : 'x-fa fa-users',
+				expanded : true,
+				children : [
+					{ text : 'Morning', xtype : 'morning', leaf : true},
+					{ text : 'Afternoon', xtype : 'afternoon', leaf : true},
+					{ text : 'Evening', xtype : 'evening', leaf : true}
+				]
+			},
+			{
+				text : 'Attendees',
+				iconCls : 'x-fa fa-users',
+				xtype : 'attendees',
+				leaf : true
+			}			
 		]
 	}
 })

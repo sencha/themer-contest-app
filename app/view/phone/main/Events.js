@@ -1,16 +1,16 @@
-Ext.define('ThemerContestApp.view.main.Speakers', {
-    extend : 'Ext.Panel',
-    xtype : 'speakers',
-    title : 'Speakers',
-    margin : '10 10 10 10',
-    border : true,
+Ext.define('ThemerContestApp.view.phone.main.Events', {
+    extend : 'Ext.grid.Grid',
+    store : 'Event',
+    xtype : 'events',
+    requires : ['Ext.grid.plugin.RowExpander'],
+    hideHeaders: true,
     items : [
         {
             xtype : 'toolbar',
             items : [
                 {
+                    text : 'Add Event',
                     iconCls : 'x-fa fa-plus',
-                    text : 'Add Speaker',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -36,7 +36,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                     {
                                         xtype : 'formpanel',
                                         padding : 10,
-                                        title : 'Add Speaker',
+                                        title : 'Add Event',
                                         defaults : {
                                             labelWidth : 120
                                         },
@@ -66,16 +66,19 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Name'
+                                                label : 'Session Title'
+                                            },
+                                            {
+                                                xtype : 'datepickerfield',
+                                                label : 'Date'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Job Title'
+                                                label : 'Time'
                                             },
                                             {
-                                                xtype : 'textareafield',
-                                                rows : 2,
-                                                label : 'Bio'
+                                                xtype : 'textfield',
+                                                label : 'Location'
                                             }
                                         ]
                                     }
@@ -83,24 +86,30 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                             });
                         }
                         this.overlay.show();
-                    }                    
+                    }
+
                 }
-            ]  
-        },
-        {
-            xtype : 'list',
-            itemTpl : '{name}<br /><font style="color:#a0a0a0">{job_title}</font>',
-            store : 'Speaker',
-            height : 450,
-            scrollable : 'y',
-            onItemDisclosure : function (record, btn) {
-                var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
-                console.log('main ', main);
-                if (main) {
-                    main.fireEvent('speakerselect', record, btn);
-                }
-                
-            }
+            ],
+            docked : 'top'
         }
-    ]
+    ],  
+    columns : [
+        {
+            text : 'Session Title',
+            dataIndex : 'title',
+            flex : 1
+        }
+    ],
+    plugins : {
+        type : 'gridrowexpander'
+    },
+    itemConfig : {
+        body : {
+            tpl : [
+                '{time}<br />',
+                '{location}<br />'
+            ]
+        }
+    }
+    
 });

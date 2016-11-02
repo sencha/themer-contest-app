@@ -19,6 +19,7 @@ Ext.define('ThemerContestApp.view.phone.main.Main', {
     listeners : {
         initialize : 'onPhoneViewRender'
     },
+    itemId : 'app-main',
     constructor : function (config) {
         var me = this;
         var sidebar = new ThemerContestApp.view.phone.main.Sidebar();
@@ -60,50 +61,5 @@ Ext.define('ThemerContestApp.view.phone.main.Main', {
             ]
         });
         me.callParent(arguments);
-    },
-    /*items : [
-        {
-            xtype : 'toolbar',
-            items : [
-                {
-                    iconCls : 'x-fa fa-navicon',
-                    handler : function () {
-                        Ext.Viewport.toggleMenu('left');
-                    }
-                }
-            ],
-            style : {
-                background : '#5fa2dd'
-            },
-            reference : 'phonebar'
-        },
-        {
-            xtype : 'panel',
-            layout : {
-                type : 'card'
-            },
-            reference : 'contentCard',
-            items : [
-                {
-                    text : 'Dashboard'
-                }
-            ]
-        }
-    ]*/
-    /*tabBarPosition : 'bottom',
-    
-    items : [
-        {
-            title : 'dashboard',
-            xtype : 'dashboard',
-            layout : {
-                type : 'vbox',
-                align : 'stretch'
-            }
-        },
-        {
-            title : 'Speakers',
-            html : 'Speakers'
-        }
-    ]*/
+    }
 });

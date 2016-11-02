@@ -12,7 +12,12 @@ Ext.define('ThemerContestApp.Application', {
     ],
     stores: [
         // TODO: add global / shared stores here
-        'NavigationStore'
+        'NavigationStore',
+        'Registration',
+        'Event',
+        'DoList',
+        'Speaker',
+        'Attendee'
     ],
     profiles : ['Phone', 'Tablet'],
 
