@@ -1,3 +1,8 @@
+/**
+ * Morning view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.main.Morning', {
     extend : 'Ext.Panel',
     xtype : 'morning',

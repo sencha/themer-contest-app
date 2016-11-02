@@ -1,3 +1,8 @@
+/**
+ * Registrations view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.main.Registrations', {
     extend : 'Ext.grid.Grid',
     store : 'Registration',

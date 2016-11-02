@@ -1,3 +1,8 @@
+/**
+ * Attendees view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.main.Afternoon', {
     extend : 'Ext.Panel',
     xtype : 'afternoon',

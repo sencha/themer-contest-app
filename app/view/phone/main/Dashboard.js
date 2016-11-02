@@ -1,3 +1,8 @@
+/**
+ * Dashboard view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.phone.main.Dashboard', {
     extend : 'Ext.Container',
     xtype : 'dashboard',

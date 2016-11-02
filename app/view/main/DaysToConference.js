@@ -1,3 +1,8 @@
+/**
+ * DaysToConference view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.main.DaysToConference', {
     extend : 'Ext.Panel',
     xtype : 'confdays',

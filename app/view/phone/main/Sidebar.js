@@ -1,3 +1,8 @@
+/**
+ * Sidebar view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.phone.main.Sidebar', {
     extend : 'Ext.Menu',
     xtype : 'sidebar',

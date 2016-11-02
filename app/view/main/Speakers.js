@@ -1,3 +1,8 @@
+/**
+ * Speakers view
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
+ */
 Ext.define('ThemerContestApp.view.main.Speakers', {
     extend : 'Ext.Panel',
     xtype : 'speakers',

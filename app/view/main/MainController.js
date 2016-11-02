@@ -1,8 +1,7 @@
 /**
- * This class is the controller for the main view for the application. It is specified as
- * the "controller" of the Main view class.
- *
- * TODO - Replace this content of this view to suite the needs of your application.
+ * Main ViewController
+ * @author Ritesh Patel
+ * @email ritesh.patel@sencha.com
  */
 Ext.define('ThemerContestApp.view.main.MainController', {
     extend: 'Ext.app.ViewController',
@@ -15,6 +14,7 @@ Ext.define('ThemerContestApp.view.main.MainController', {
             }
         }
     },
+    // custom events
     control : {
         '#' : {
             menuitemselect : 'onMenuItemSelect',
@@ -32,6 +32,11 @@ Ext.define('ThemerContestApp.view.main.MainController', {
 			platform: 'phone'
 		}
 	}, 
+
+    /**
+     * @method
+     * init method. sets a default card.
+     */
     init : function () {
         if (this.platform !== 'phone') {
             var navigation = this.lookupReference('navigation');
@@ -40,6 +45,13 @@ Ext.define('ThemerContestApp.view.main.MainController', {
             navigation.setSelection(node);
         } 
     },
+
+    /**
+     * @method
+     * Responds to navigation tree node selection.
+     * @param {Ext.list.Tree} tree - navigation tree
+     * @param {Object} node - selected tree node
+     */
     onSelectionChange : function (tree, node) {
         var to = node && node.get('xtype');
         if (to) {
@@ -47,9 +59,11 @@ Ext.define('ThemerContestApp.view.main.MainController', {
         }
     },
     
-    onMainViewRender : function () {
-        console.log('view rendered');
-    },
+    /**
+     * @method
+     * Sets current view in the card
+     * @param {string} xtype - component to be activated
+     */
     setCurrentView : function (xtype) {
         if (this.platform !== 'phone') {
             var refs = this.getReferences();
@@ -70,6 +84,11 @@ Ext.define('ThemerContestApp.view.main.MainController', {
         }
     },
 
+    /**
+     * @method
+     * Sets phone view
+     * @param {string} xtype - phone view component to be activated
+     */
     setPhoneView : function (xtype) {
         if (this.platform === 'phone') {
             item = this.contentCard.child('component[xtype=' + xtype + ']');
@@ -80,15 +99,29 @@ Ext.define('ThemerContestApp.view.main.MainController', {
         }
     },
 
+    /**
+     * @method
+     * Listens for route change
+     * @param {string} id - component xtype
+     */
     onRouteChange : function (id) {
         this.setCurrentView(id);
     },
 
+    /**
+     * @method
+     * Responds to phone menu item selection
+     * @param {Ext.Button} button - clicked menu button reference
+     */
     onMenuItemSelect : function (btn) {
         var item = btn.getText().toLowerCase();
         this.setPhoneView(item);
     },
 
+    /**
+     * @method
+     * Sets default view for the phones
+     */
     onPhoneViewRender : function (pnl) {
         var refs = this.getReferences();
         this.contentCard = refs.contentCard;
@@ -101,8 +134,13 @@ Ext.define('ThemerContestApp.view.main.MainController', {
         this.contentCard.setActiveItem(item);
     },
 
+    /**
+     * @method
+     * Listens to speaker selection from list. Adds speaker detail tab panel to the card and updates bio / session templates.
+     * @param {Object} record - selected list record
+     * @param {Ext.Button} btn - item disclosure button
+     */
     onSpeakerSelect : function (record, btn) {
-        console.log('speaker selected');
         if (!this.speakerDetail) {
             this.speakerDetail = this.contentCard.add({
                 xtype : 'speakerdetail'
