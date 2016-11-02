@@ -8,9 +8,6 @@ Ext.define('ThemerContestApp.view.main.DoList', {
     store : 'DoList',
     xtype : 'dolist',
     autoScroll : true,
-    minHeight : 150,
-    height : 'auto',
-    header : false,
     hideHeaders : true,
     columns : [
         {

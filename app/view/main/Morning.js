@@ -4,14 +4,18 @@
  * @email ritesh.patel@sencha.com
  */
 Ext.define('ThemerContestApp.view.main.Morning', {
-    extend : 'Ext.Panel',
+extend : 'Ext.grid.Grid',
+    store : 'Event',
     xtype : 'morning',
-    title : 'Events - Morning',
-    margin : '10 10 10 10',
     border : true,
+    style : 'border:1px solid #5fa2dd',
+    margin : '10 10 10 10',
+    title : 'Events - Morning',
     items : [
         {
             xtype : 'toolbar',
+            height : 60,
+            docked : 'top',
             items : [
                 {
                     iconCls : 'x-fa fa-plus',
@@ -93,10 +97,31 @@ Ext.define('ThemerContestApp.view.main.Morning', {
                     }
                 }
             ]  
+        }
+    ],
+    columns : [
+        {
+            text : 'Session Title',
+            dataIndex : 'title',
+            flex : 1
         },
         {
-            xtype : 'events',
-            minHeight : 400
+            text : 'Track',
+            dataIndex : 'track',
+            flex : 1,
+            hidden : Ext.os.is.phone ? true : false
+        },
+        {
+            text : 'Day & Time',
+            dataIndex : 'time',
+            flex : 1,
+            hidden : Ext.os.is.phone ? true : false
+        },
+        {
+            text : 'Location',
+            dataIndex : 'location',
+            flex : 1,
+            hidden : Ext.os.is.phone ? true : false
         }
-    ]    
+    ]
 })

@@ -4,15 +4,18 @@
  * @email ritesh.patel@sencha.com
  */
 Ext.define('ThemerContestApp.view.main.Attendees', {
-    extend : 'Ext.Panel',
+    extend : 'Ext.grid.Grid',
     margin : '10 10 10 10',
     xtype : 'attendees',
-    border : true,
     title : 'Attendees',
-    height : 600,
+    store : 'Attendee',
+    border : true,
+    style : 'border:1px solid #5fa2dd',
     items : [
         {
             xtype : 'toolbar',
+            height : 60,
+            docked : 'top',
             items : [
                 {
                     text : 'Add Attendee',
@@ -91,10 +94,28 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
                     }                    
                 }
             ]
+        }
+    ],
+    columns : [
+        {
+            text : 'Name',
+            dataIndex : 'name',
+            flex : 1
         },
         {
-            xtype : 'attendeeslist',
-            minHeight : 500
+            text : 'Job Title',
+            dataIndex : 'title',
+            flex : 1
+        },
+        {
+            text : 'Company',
+            dataIndex : 'company',
+            flex : 1
+        },
+        {
+            text : 'Email',
+            dataIndex : 'email',
+            flex : 1
         }
-    ]
+    ]    
 });

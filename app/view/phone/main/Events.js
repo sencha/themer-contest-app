@@ -17,7 +17,7 @@ Ext.define('ThemerContestApp.view.phone.main.Events', {
         }
     ],
     plugins : {
-        type : 'gridrowexpander'
+        type : 'rowexpander'
     },
     itemConfig : {
         body : {
