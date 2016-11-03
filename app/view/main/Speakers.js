@@ -88,9 +88,9 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                             });
                         }
                         this.overlay.show();
-                    }                    
+                    }
                 }
-            ]  
+            ]
         },
         {
             xtype : 'list',
@@ -98,13 +98,19 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
             store : 'Speaker',
             height : 450,
             scrollable : 'y',
+            listeners: {
+              itemtap: function(list, index, target, record) {
+                var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
+                main.fireEvent('speakerselect', record);
+              }
+            },
             onItemDisclosure : function (record, btn) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
                 console.log('main ', main);
                 if (main) {
                     main.fireEvent('speakerselect', record, btn);
                 }
-                
+
             }
         }
     ]

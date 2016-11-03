@@ -15,16 +15,22 @@ Ext.define('ThemerContestApp.view.main.Main', {
     },
     itemId : 'app-main',
     items : [
-        {
-            xtype : 'container',
-            docked : 'top',
-            height : 50,
-            items : [
-                {
-                    html : 'Conference Manager Pro'
+      {
+          xtype : 'container',
+          docked : 'top',
+          height : 50,
+          items : [
+            {
+                xtype : 'toolbar',
+                title : 'Conference Manager Pro',
+                docked : 'top',
+                height : 50,
+                scrollable : {
+                  y: false
                 }
-            ]
-        },
+
+            }]
+      },
         {
             xtype : 'sidebar',
             docked : 'left'
