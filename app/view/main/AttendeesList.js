@@ -23,7 +23,7 @@ Ext.define('ThemerContestApp.view.main.AttendeesList', {
                                 modal : true,
                                 hideOnMaskTap : true,
                                 width : 320,
-                                height : 300,
+                                height : 270,
                                 autoScroll : true,
                                 showAnimation : {
                                     type : 'popIn',
@@ -86,11 +86,11 @@ Ext.define('ThemerContestApp.view.main.AttendeesList', {
                             });
                         }
                         this.overlay.show();
-                    }                    
+                    }
                 }
             ]
         }
-    ],    
+    ],
     columns : [
         {
             text : 'Name',

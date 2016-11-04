@@ -6,12 +6,13 @@
 Ext.define('ThemerContestApp.view.main.Attendees', {
     extend : 'Ext.grid.Grid',
     xtype : 'attendees',
-    title : 'Attendees',
     store : 'Attendee',
     border : true,
     items : [
         {
             xtype : 'toolbar',
+            ui : 'attendees-toolbar',
+            title : 'Attendees',
             height : 60,
             docked : 'top',
             items : [
@@ -26,7 +27,7 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
                                 modal : true,
                                 hideOnMaskTap : true,
                                 width : 320,
-                                height : 300,
+                                height : 210,
                                 autoScroll : true,
                                 showAnimation : {
                                     type : 'popIn',
@@ -89,7 +90,7 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
                             });
                         }
                         this.overlay.show();
-                    }                    
+                    }
                 }
             ]
         }
@@ -115,5 +116,5 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
             dataIndex : 'email',
             flex : 1
         }
-    ]    
+    ]
 });

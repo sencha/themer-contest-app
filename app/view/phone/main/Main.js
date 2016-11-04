@@ -29,6 +29,7 @@ Ext.define('ThemerContestApp.view.phone.main.Main', {
             items : [
                 {
                     xtype : 'toolbar',
+                    ui : 'phone-toolbar',
                     reference : 'phonebar',
                     items : [
                         {
