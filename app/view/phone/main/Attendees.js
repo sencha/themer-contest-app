@@ -14,7 +14,6 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
             xtype : 'toolbar',
             items : [
                 {
-                    text : 'Add Attendee',
                     iconCls : 'x-fa fa-plus',
                     handler : function (btn) {
                         if (!this.overlay) {
@@ -24,7 +23,7 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
                                 modal : true,
                                 hideOnMaskTap : true,
                                 width : 320,
-                                height : 300,
+                                height : 285,
                                 autoScroll : true,
                                 showAnimation : {
                                     type : 'popIn',
@@ -93,7 +92,7 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
             ],
             docked : 'top'
         }
-    ],  
+    ],
     columns : [
         {
             text : 'Name',
@@ -112,5 +111,5 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
             ]
         }
     }
-    
+
 });

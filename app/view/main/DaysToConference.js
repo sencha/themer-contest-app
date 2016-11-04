@@ -6,6 +6,7 @@
 Ext.define('ThemerContestApp.view.main.DaysToConference', {
     extend : 'Ext.Panel',
     xtype : 'confdays',
+    ui: 'days-to-conference',
     header : true,
     border : true,
     title : 'Days To Conference',

@@ -21,9 +21,11 @@ Ext.define('ThemerContestApp.view.main.Main', {
           height : 50,
           items : [
             {
-                xtype : 'toolbar',
+                xtype : 'titlebar',
+                ui : 'main-header',
                 title : 'Conference Manager Pro',
                 docked : 'top',
+                titleAlign : 'left',
                 height : 50,
                 scrollable : {
                   y: false

@@ -6,6 +6,7 @@
 Ext.define('ThemerContetApp.view.main.Navigation', {
     extend : 'Ext.list.Tree',
     xtype : 'navigation',
+    ui : 'navigation',
     reference : 'navigation',
     store : 'NavigationStore',
     expanderFirst : false,

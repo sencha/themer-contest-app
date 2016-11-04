@@ -7,6 +7,7 @@ Ext.define('ThemerContestApp.view.main.Events', {
     extend : 'Ext.grid.Grid',
     store : 'Event',
     xtype : 'events',
+    ui : 'all-events',
     columns : [
         {
             text : 'Session Title',

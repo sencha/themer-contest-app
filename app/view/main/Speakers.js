@@ -6,16 +6,16 @@
 Ext.define('ThemerContestApp.view.main.Speakers', {
     extend : 'Ext.Panel',
     xtype : 'speakers',
-    title : 'Speakers',
-    margin : '10 10 10 10',
     border : true,
+    layout : 'vbox',
     items : [
         {
             xtype : 'toolbar',
+            title : 'Speakers',
+            height : 60,
             items : [
                 {
                     iconCls : 'x-fa fa-plus',
-                    text : 'Add Speaker',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -24,7 +24,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                 modal : true,
                                 hideOnMaskTap : true,
                                 width : 320,
-                                height : 350,
+                                height : 270,
                                 autoScroll : true,
                                 showAnimation : {
                                     type : 'popIn',
@@ -96,6 +96,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
             xtype : 'list',
             itemTpl : '{name}<br /><font style="color:#a0a0a0">{job_title}</font>',
             store : 'Speaker',
+            flex : 1,
             height : 450,
             scrollable : 'y',
             listeners: {

@@ -8,10 +8,11 @@ extend : 'Ext.grid.Grid',
     store : 'Event',
     xtype : 'afternoon',
     border : true,
-    title : 'Events - Afternoon',
     items : [
         {
             xtype : 'toolbar',
+            ui : 'afternoon-toolbar',
+            title : 'Events - Afternoon',
             height : 60,
             docked : 'top',
             items : [
@@ -26,7 +27,7 @@ extend : 'Ext.grid.Grid',
                                 modal : true,
                                 hideOnMaskTap : true,
                                 width : 400,
-                                height : 275,
+                                height : 265,
                                 showAnimation : {
                                     type : 'popIn',
                                     duration : 250,
@@ -94,7 +95,7 @@ extend : 'Ext.grid.Grid',
                         this.overlay.show();
                     }
                 }
-            ]  
+            ]
         }
     ],
     columns : [

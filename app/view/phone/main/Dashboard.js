@@ -6,42 +6,48 @@
 Ext.define('ThemerContestApp.view.phone.main.Dashboard', {
     extend : 'Ext.Container',
     xtype : 'dashboard',
+    scrollable : true,
     layout : {
         type : 'vbox'
     },
     items : [
         {
             xtype : 'confdays',
-            flex : 1
+            height : 400
+            // flex : 2
         },
         {
             xtype : 'registrations',
             title : 'New Registrations',
             hideHeaders : true,
-            flex : 1
+            height : 400
+            // flex : 2
         },
         {
             xtype : 'events',
             title : 'All Events',
             hideHeaders : true,
-            flex : 1           
+            height : 400
+            // flex : 2
         },
         {
             xtype : 'dolist',
             header : true,
             title : 'To Do List',
-            flex : 1
+            height : 400
+            // flex : 2
         },
         {
             xtype : 'panel',
             header : true,
+            height : 400,
             title : 'Total Registrations',
             layout : {
                 type : 'hbox',
                 align : 'center',
                 pack : 'center'
             },
-            flex : 1,
+            // flex : 2,
             items : [
                 {
                     xtype : 'progress',
@@ -49,7 +55,7 @@ Ext.define('ThemerContestApp.view.phone.main.Dashboard', {
                     text : '736/1000 Registered',
                     width : 250
                 }
-            ]                    
+            ]
         }
     ]
 })

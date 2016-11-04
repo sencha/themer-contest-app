@@ -8,16 +8,16 @@ extend : 'Ext.grid.Grid',
     store : 'Event',
     xtype : 'morning',
     border : true,
-    title : 'Events - Morning',
     items : [
         {
             xtype : 'toolbar',
+            ui : 'morning-toolbar',
+            title : 'Events - Morning',
             height : 60,
             docked : 'top',
             items : [
                 {
                     iconCls : 'x-fa fa-plus',
-                    text : 'Add Event',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -26,7 +26,7 @@ extend : 'Ext.grid.Grid',
                                 modal : true,
                                 hideOnMaskTap : true,
                                 width : 400,
-                                height : 275,
+                                height : 265,
                                 showAnimation : {
                                     type : 'popIn',
                                     duration : 250,
@@ -94,7 +94,7 @@ extend : 'Ext.grid.Grid',
                         this.overlay.show();
                     }
                 }
-            ]  
+            ]
         }
     ],
     columns : [
