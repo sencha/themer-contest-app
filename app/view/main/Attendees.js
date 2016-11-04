@@ -17,7 +17,6 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
             docked : 'top',
             items : [
                 {
-                    text : 'Add Attendee',
                     iconCls : 'x-fa fa-plus',
                     handler : function (btn) {
                         if (!this.overlay) {

@@ -11,6 +11,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
     items : [
         {
             xtype : 'toolbar',
+            ui : 'speakers-toolbar',
             title : 'Speakers',
             height : 60,
             items : [
@@ -94,6 +95,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
         },
         {
             xtype : 'list',
+            ui : 'speakers-list',
             itemTpl : '{name}<br /><font style="color:#a0a0a0">{job_title}</font>',
             store : 'Speaker',
             flex : 1,

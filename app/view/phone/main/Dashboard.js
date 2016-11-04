@@ -39,6 +39,7 @@ Ext.define('ThemerContestApp.view.phone.main.Dashboard', {
         },
         {
             xtype : 'panel',
+            ui : 'total-registrations',
             header : true,
             height : 400,
             title : 'Total Registrations',

@@ -18,7 +18,6 @@ extend : 'Ext.grid.Grid',
             items : [
                 {
                     iconCls : 'x-fa fa-plus',
-                    text : 'Add Event',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({

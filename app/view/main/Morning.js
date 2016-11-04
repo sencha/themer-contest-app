@@ -8,6 +8,7 @@ extend : 'Ext.grid.Grid',
     store : 'Event',
     xtype : 'morning',
     border : true,
+    flex : 1,
     items : [
         {
             xtype : 'toolbar',

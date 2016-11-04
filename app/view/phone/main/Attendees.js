@@ -12,6 +12,7 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
     items : [
         {
             xtype : 'toolbar',
+            ui : 'moible-attendees-toolbar',
             items : [
                 {
                     iconCls : 'x-fa fa-plus',
