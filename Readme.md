@@ -18,9 +18,9 @@ sencha app install framework=/path/to/extjs/framework
 
 * Start web server with Fashion and watch changes
 
-    ```
-    sencha app watch -fashion
-    ```
+```
+sencha app watch -fashion
+```
 
 * View the sample app in browser.
 ```
