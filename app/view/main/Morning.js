@@ -17,6 +17,7 @@ extend : 'Ext.grid.Grid',
             height : 60,
             docked : 'top',
             items : [
+                '->',
                 {
                     iconCls : 'x-fa fa-plus',
                     handler : function (btn) {
