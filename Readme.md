@@ -13,7 +13,7 @@
 * Build the sample application
 ```
 cd theming-contest-app-master
-sencha app install framework=/path/to/extjs/framework
+sencha app install --frameworks=/path/to/extjs
 ```
 
 * Start app watch with Fashion
