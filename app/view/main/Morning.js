@@ -20,6 +20,7 @@ extend : 'Ext.grid.Grid',
                 '->',
                 {
                     iconCls : 'x-fa fa-plus',
+                    ui:'add-event-morning-button',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -74,19 +75,23 @@ extend : 'Ext.grid.Grid',
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Session Title'
+                                                label : 'Session Title',
+                                                ui:'morning-title-textfield'
                                             },
                                             {
                                                 xtype : 'datepickerfield',
-                                                label : 'Date'
+                                                label : 'Date',
+                                                ui:'morning-date-datepickerfield'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Time'
+                                                label : 'Time',
+                                                ui:'morning-time-textfield'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Location'
+                                                label : 'Location',
+                                                ui:'morning-location-textfield'
                                             }
                                         ]
                                     }
@@ -103,25 +108,52 @@ extend : 'Ext.grid.Grid',
         {
             text : 'Session Title',
             dataIndex : 'title',
-            flex : 1
+            flex : 1,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "events-morning-grid"
+            }
         },
         {
             text : 'Track',
             dataIndex : 'track',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false
+            hidden : Ext.os.is.phone ? true : false,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "events-morning-grid"
+            }
         },
         {
             text : 'Day & Time',
             dataIndex : 'time',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false
+            hidden : Ext.os.is.phone ? true : false,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "events-morning-grid"
+            }
         },
         {
             text : 'Location',
             dataIndex : 'location',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false
+            hidden : Ext.os.is.phone ? true : false,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "events-morning-grid"
+            }
         }
-    ]
+    ],
+    itemConfig : {
+        ui: 'events-morning-grid',
+        
+        "header": {
+            "ui": "events-morning-grid"
+        },
+        "headerContainer": {
+            "ui": "events-morning-grid"
+        }
+        
+    }
 })

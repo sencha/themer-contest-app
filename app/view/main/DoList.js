@@ -15,11 +15,30 @@ Ext.define('ThemerContestApp.view.main.DoList', {
             dataIndex : 'done',
             editor : {
                 xtype : 'checkbox'
+            },
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "all-dolist-grid"
             }
         },
         {
             dataIndex : 'name',
-            flex : 1
+            flex : 1,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "all-dolist-grid"
+            }
         }
-    ]
+    ],
+    itemConfig : {
+        ui: 'all-dolist-grid',
+        
+        "header": {
+            "ui": "all-dolist-grid"
+        },
+        "headerContainer": {
+            "ui": "all-dolist-grid"
+        }
+        
+    }
 });

@@ -19,6 +19,7 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
                 '->',
                 {
                     iconCls : 'x-fa fa-plus',
+                    ui:'add-attendee-button',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -74,15 +75,18 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Name'
+                                                label : 'Name',
+                                                ui:'add-attendee-name-textfield'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Job Title'
+                                                label : 'Job Title',
+                                                ui:'add-attendee-title-textfield'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Email'
+                                                label : 'Email',
+                                                ui:'add-attendee-email-textfield'
                                             }
                                         ]
                                     }
@@ -99,22 +103,49 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
         {
             text : 'Name',
             dataIndex : 'name',
-            flex : 1
+            flex : 1,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "attendees-grid"
+            }
         },
         {
             text : 'Job Title',
             dataIndex : 'title',
-            flex : 1
+            flex : 1,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "attendees-grid"
+            }
         },
         {
             text : 'Company',
             dataIndex : 'company',
-            flex : 1
+            flex : 1,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "attendees-grid"
+            }
         },
         {
             text : 'Email',
             dataIndex : 'email',
-            flex : 1
+            flex : 1,
+            "cell": {
+                "xtype": "gridcell",
+                "ui": "attendees-grid"
+            }
         }
-    ]
+    ],
+    itemConfig : {
+        ui: 'attendees-grid',
+        
+        "header": {
+            "ui": "attendees-grid"
+        },
+        "headerContainer": {
+            "ui": "attendees-grid"
+        }
+        
+    }
 });
