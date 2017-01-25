@@ -8,7 +8,6 @@ Ext.define('ThemerContestApp.view.main.SpeakerDetail', {
     xtype : 'speakerdetail',
     reference : 'speakerdetail',
     tabBarPosition : 'bottom',
-    ui: "speaker-details-panel",
     tabBar: {
         "ui": "speaker-tabs"
     },
