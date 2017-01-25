@@ -1,5 +1,12 @@
 {
     /**
+     *  An array of the paths to all the applications present in this workspace
+     */
+    "apps": [
+        "packages/local/theme-triton-24/.sencha/temp/Themer"
+    ],
+
+    /**
      * An object containing key value pair framework descriptors.
      * 
      * The value can be a string or an object containing at least one of "dir" or "pkg",
@@ -24,8 +31,9 @@
     "frameworks": {
         "ext": {
             "path":"ext",
-            "version":"6.2.0.981"
+            "version":"6.2.1.167"
         }
+        
         
     },
 

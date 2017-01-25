@@ -18,6 +18,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                 '->',
                 {
                     iconCls : 'x-fa fa-plus',
+                    ui:'add-speaker-button',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -73,16 +74,19 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Name'
+                                                label : 'Name',
+                                                ui:'add-speaker-name-textfield'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Job Title'
+                                                label : 'Job Title',
+                                                ui:'add-speaker-title-textfield'
                                             },
                                             {
                                                 xtype : 'textareafield',
                                                 rows : 2,
-                                                label : 'Bio'
+                                                label : 'Bio',
+                                                ui:'add-speaker-bio-textareafield'
                                             }
                                         ]
                                     }
@@ -106,7 +110,16 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
               itemtap: function(list, index, target, record) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
                 main.fireEvent('speakerselect', record);
-              }
+              },
+             "indexBar": {
+                "ui": "speakers-list"
+            },  
+            "itemConfig": {
+                "ui": "speakers-list",
+                "header": {
+                "ui": "speakers-list"
+                }
+            }
             },
             onItemDisclosure : function (record, btn) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
