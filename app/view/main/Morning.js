@@ -81,7 +81,12 @@ extend : 'Ext.grid.Grid',
                                             {
                                                 xtype : 'datepickerfield',
                                                 label : 'Date',
-                                                ui:'morning-date-datepickerfield'
+                                                ui:'morning-date-datepickerfield',
+                                                triggers: {
+                                                    expand: {
+                                                        ui: 'morning-datetrigger'
+                                                    }
+                                                }
                                             },
                                             {
                                                 xtype : 'textfield',
