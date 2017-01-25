@@ -101,7 +101,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
         {
             xtype : 'list',
             ui : 'speakers-list',
-            itemTpl : '{name}<br /><font style="color:#a0a0a0">{job_title}</font>',
+            itemTpl : '{name}<br /><span style="color:#a0a0a0">{job_title}</span>',
             store : 'Speaker',
             flex : 1,
             height : 450,
@@ -111,30 +111,29 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
                 main.fireEvent('speakerselect', record);
               },
-             "indexBar": {
+            },
+            "indexBar": {
                 "ui": "speakers-list"
             },  
             "itemConfig": {
                 "ui": "speakers-list",
                 "header": {
-                "ui": "speakers-list"
+                    "ui": "speakers-list"
                 }
-            }
             },
             onItemDisclosure : function (record, btn) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
-                console.log('main ', main);
+
                 if (main) {
                     main.fireEvent('speakerselect', record, btn);
                 }
-
             }
         }
     ] : [
         {
             xtype : 'list',
             ui : 'speakers-list',
-            itemTpl : '{name}<br /><font style="color:#a0a0a0">{job_title}</font>',
+            itemTpl : '{name}<br /><span style="color:#a0a0a0">{job_title}</span>',
             store : 'Speaker',
             flex : 1,
             height : 450,
@@ -144,6 +143,15 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
                 main.fireEvent('speakerselect', record);
               }
+            },
+            "indexBar": {
+                "ui": "speakers-list"
+            },  
+            "itemConfig": {
+                "ui": "speakers-list",
+                "header": {
+                    "ui": "speakers-list"
+                }
             },
             onItemDisclosure : function (record, btn) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
