@@ -13,7 +13,7 @@ Ext.define('ThemerContestApp.view.main.SpeakerDetail', {
         {
             title : 'Bio',
             iconCls : 'x-fa fa-graduation-cap',
-            tpl : '<font style="font-weight:900;font-size:18px;margin:10px;">{name}</font><br /><font style="color:#404040;margin:10px;">{job_title}</font><hr /><font style="padding:10px;display:block">{bio}</font>',
+            tpl : '<span style="font-weight:900;font-size:18px;margin:10px;">{name}</span><br /><span style="color:#404040;margin:10px;">{job_title}</span><hr /><span style="padding:10px;display:block">{bio}</span>',
             itemId : 'bioCard',
             reference : 'bioCard',
             ui : 'bio-tab'
@@ -21,7 +21,7 @@ Ext.define('ThemerContestApp.view.main.SpeakerDetail', {
         {
             title : 'Session',
             iconCls : 'x-fa fa-bell-o',
-            tpl : '<font style="font-weight:900;font-size:18px;margin:10px;">{session_title}</font><br /><font style="color:#404040;margin:10px;">By {name}</font><hr /><font style="padding:10px;display:block">{session_description}</font>',
+            tpl : '<span style="font-weight:900;font-size:18px;margin:10px;">{session_title}</span><br /><span style="color:#404040;margin:10px;">By {name}</span><hr /><span style="padding:10px;display:block">{session_description}</span>',
             itemId : 'sessionCard',
             reference : 'sessionCard',
             ui : 'session-tab'
