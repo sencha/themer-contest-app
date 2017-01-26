@@ -15,10 +15,6 @@ Ext.define('ThemerContestApp.view.main.DoList', {
             dataIndex : 'done',
             editor : {
                 xtype : 'checkbox'
-            },
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "all-dolist-grid"
             }
         },
         {

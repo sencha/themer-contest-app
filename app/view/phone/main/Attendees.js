@@ -18,7 +18,7 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
                 "xtype": "gridcell",
                 "ui": "phone-attendees-grid"
             }
-        },
+        }
     ],
     plugins : {
         type : 'rowexpander'
