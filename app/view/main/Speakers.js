@@ -110,7 +110,7 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
               itemtap: function(list, index, target, record) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
                 main.fireEvent('speakerselect', record);
-              },
+              }
             },
             "indexBar": {
                 "ui": "speakers-list"
