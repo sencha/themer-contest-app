@@ -1,8 +1,8 @@
 ## Sencha App Theming Contest
 
 ### Requirements
-* [Download Ext JS 6.2] (https://www.sencha.com/products/extjs/evaluate/)
-* [Download Sencha Cmd 6.2] (https://www.sencha.com/products/extjs/cmd-download/)
+* [Download Ext JS 6.2.1] (https://www.sencha.com/products/extjs/evaluate/)
+* [Download Sencha Cmd 6.2.1] (https://www.sencha.com/products/extjs/cmd-download/)
 * [Download Sencha Themer 1.1 EA] (http://pages.sencha.com/ext-js-tools-ea-2016.html)
 
 
@@ -38,12 +38,12 @@ To verify that themer is connected to the contest app go to View>Connected App(s
 Use Sencha Themer to create a custom theme for the contest app.
 
 ### Submit your contest entry
-To submit your theme follow submission guidlines on [Theming Contest Page](https://www.sencha.com/sencha-theming-contest-2016/)
+Email your contest theme to contest@sencha.com. We’ll email you within two days of your submission to let you know if your entry has been accepted. If you don’t receive an email confirmation, please contact us. Contest rules are at [Theming Contest Page](https://www.sencha.com/sencha-theming-contest-2016/)
 
 
 ### Resources
 * [Watch Sencha Themer Video] (https://www.youtube.com/playlist?list=PL6F9Ss2VSSeJ5d6gFKKVqU0rAW-Bx9MEV)
-* [Sencha Themer Walkthrough guide] (http://docs.sencha.com/themer/guides/walkthrough.html)
+* [Sencha Themer Walkthrough guide] (http://docs.sencha.com/themer/1.1/guides/walkthrough.html)
 
 ### Any Questions?
 If you have any additional questions about the contest, please send those to contest forum at  [Sencha Contest Forum] (https://www.sencha.com/forum/forumdisplay.php?147-Sencha-Themer)
