@@ -8,6 +8,7 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
     xtype : 'attendees',
     store : 'Attendee',
     border : true,
+    margin : '10 10 10 10',
     items : [
         {
             xtype : 'toolbar',
@@ -19,16 +20,16 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
                 '->',
                 {
                     iconCls : 'x-fa fa-plus',
-                    ui:'add-attendee-button',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
-                                xtype : 'panel',
-                                floated : true,
+                                xtype : 'formpanel',
+                                cls: 'popup-form',
                                 modal : true,
                                 hideOnMaskTap : true,
-                                width : 320,
-                                height : 210,
+                                width : 400,
+                                height : 350,
+                                padding : 20,
                                 autoScroll : true,
                                 showAnimation : {
                                     type : 'popIn',
@@ -41,52 +42,45 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
                                     easing: 'ease-out'
                                 },
                                 centered: true,
+                                title : 'Add Attendee',
+                                defaults : {
+                                    labelWidth : 120
+                                },
                                 items : [
                                     {
-                                        xtype : 'formpanel',
-                                        padding : 10,
-                                        title : 'Add Attendee',
-                                        defaults : {
-                                            labelWidth : 120
-                                        },
+                                        xtype : 'textfield',
+                                        label : 'Name'
+                                    },
+                                    {
+                                        xtype : 'textfield',
+                                        label : 'Job Title'
+                                    },
+                                    {
+                                        xtype : 'textfield',
+                                        label : 'Email'
+                                    },
+                                     {
+                                        xtype : 'toolbar',
+                                        docked : 'bottom',
                                         items : [
                                             {
-                                                xtype : 'toolbar',
-                                                docked : 'bottom',
-                                                items : [
-                                                    '->',
-                                                    {
-                                                        text : 'Cancel',
-                                                        iconCls : 'x-fa fa-times',
-                                                        scope : this,
-                                                        handler : function () {
-                                                            this.overlay.hide();
-                                                        }
-                                                    },
-                                                    {
-                                                        text : 'Add',
-                                                        scope : this,
-                                                        iconCls : 'x-fa fa-plus',
-                                                        handler : function () {
-                                                            this.overlay.hide();
-                                                        }
-                                                    }
-                                                ]
+                                                text : 'Cancel',
+                                                iconCls : 'x-fa fa-times',
+                                                ui: 'attendees-button',
+                                                scope : this,
+                                                handler : function () {
+                                                    this.overlay.hide();
+                                                }
                                             },
+                                            '->',
                                             {
-                                                xtype : 'textfield',
-                                                label : 'Name',
-                                                ui:'add-attendee-name-textfield'
-                                            },
-                                            {
-                                                xtype : 'textfield',
-                                                label : 'Job Title',
-                                                ui:'add-attendee-title-textfield'
-                                            },
-                                            {
-                                                xtype : 'textfield',
-                                                label : 'Email',
-                                                ui:'add-attendee-email-textfield'
+                                                text : 'Add',
+                                                scope : this,
+                                                iconCls : 'x-fa fa-plus',
+                                                ui: 'attendees-button',
+                                                handler : function () {
+                                                    this.overlay.hide();
+                                                }
                                             }
                                         ]
                                     }
@@ -103,49 +97,22 @@ Ext.define('ThemerContestApp.view.main.Attendees', {
         {
             text : 'Name',
             dataIndex : 'name',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "attendees-grid"
-            }
+            flex : 1
         },
         {
             text : 'Job Title',
             dataIndex : 'title',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "attendees-grid"
-            }
+            flex : 1
         },
         {
             text : 'Company',
             dataIndex : 'company',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "attendees-grid"
-            }
+            flex : 1
         },
         {
             text : 'Email',
             dataIndex : 'email',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "attendees-grid"
-            }
+            flex : 1
         }
-    ],
-    itemConfig : {
-        ui: 'attendees-grid',
-        
-        "header": {
-            "ui": "attendees-grid"
-        },
-        "headerContainer": {
-            "ui": "attendees-grid"
-        }
-        
-    }
+    ]
 });

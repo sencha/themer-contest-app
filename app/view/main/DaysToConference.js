@@ -7,6 +7,7 @@ Ext.define('ThemerContestApp.view.main.DaysToConference', {
     extend : 'Ext.Panel',
     xtype : 'confdays',
     ui: 'days-to-conference',
+    iconCls : 'x-fa fa-calendar',
     header : true,
     border : true,
     title : 'Days To Conference',
@@ -17,11 +18,7 @@ Ext.define('ThemerContestApp.view.main.DaysToConference', {
     },
     items : [
         {
-            html : '14',
-            style : {
-                fontWeight : 900,
-                fontSize : '38px'
-            }
+            html : '<span class="days-to-conference">14</span>'
         }
     ]
 })

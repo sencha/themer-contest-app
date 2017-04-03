@@ -21,7 +21,7 @@ Ext.define('ThemerContestApp.store.NavigationStore', {
 			},
 			{
 				text : 'Speakers',
-				iconCls : 'x-fa fa-users',
+				iconCls : 'x-fa fa-bullhorn',
 				xtype : 'speakers',
 				leaf : true
 			},
@@ -37,7 +37,7 @@ Ext.define('ThemerContestApp.store.NavigationStore', {
 			},
 			{
 				text : 'Attendees',
-				iconCls : 'x-fa fa-user-plus',
+				iconCls : 'x-fa fa-users',
 				xtype : 'attendees',
 				leaf : true
 			}			

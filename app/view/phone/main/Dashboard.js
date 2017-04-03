@@ -13,36 +13,51 @@ Ext.define('ThemerContestApp.view.phone.main.Dashboard', {
     items : [
         {
             xtype : 'confdays',
-            height : 400
-            // flex : 2
+            height : 200,
+            margin: '10 0 10 0'
         },
         {
-            xtype : 'registrations',
+            xtype: 'panel',
             title : 'New Registrations',
-            hideHeaders : true,
-            height : 400
-            // flex : 2
+            iconCls : 'x-fa fa-user-plus',
+            height : 400,
+            layout : 'fit',
+            margin : '0 0 10 0',
+            items: {
+                xtype : 'registrations',
+                hideHeaders : true
+            }
         },
         {
-            xtype : 'events',
+            xtype : 'panel',
             title : 'All Events',
-            hideHeaders : true,
-            height : 400
-            // flex : 2
+            iconCls : 'x-fa fa-bolt',
+            height : 400,
+            layout : 'fit',
+            margin : '0 0 10 0',
+            items: {
+                xtype : 'events',
+                hideHeaders : true
+            }
         },
         {
-            xtype : 'dolist',
-            header : true,
+            xtype : 'panel',
             title : 'To Do List',
-            height : 400
-            // flex : 2
+            iconCls : 'x-fa fa-check-square',
+            height : 400,
+            layout : 'fit',
+            margin : '0 0 10 0',
+            items: {
+                xtype : 'dolist'
+            }
         },
         {
             xtype : 'panel',
             ui : 'total-registrations',
             header : true,
-            height : 400,
+            height : 200,
             title : 'Total Registrations',
+            iconCls : 'x-fa fa-level-up',
             layout : {
                 type : 'hbox',
                 align : 'center',

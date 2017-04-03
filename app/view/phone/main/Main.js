@@ -42,6 +42,7 @@ Ext.define('ThemerContestApp.view.phone.main.Main', {
                 },
                 {
                     xtype : 'container',
+                    cls: 'content',
                     layout : {
                         type : 'card',
                         animation : {

@@ -5,16 +5,13 @@
  */
 Ext.define('ThemerContestApp.view.phone.main.Sidebar', {
     extend : 'Ext.Menu',
+    cls: 'phone-sidebar',
     xtype : 'sidebar',
-    ui:'phone-sidebar-panel',
-    // defaults : {
-    //     margin : '10 0'
-    // },
     items : [
         {
             text : 'Dashboard',
             iconCls : 'x-fa fa-dashboard',
-            ui:'phone-sidebar-dashboard-button',
+            ui: 'phone-menu-button',
             handler : function (btn) {
                 var panel = Ext.Viewport.down('panel');
                 panel.fireEvent('menuitemselect', btn);
@@ -22,8 +19,8 @@ Ext.define('ThemerContestApp.view.phone.main.Sidebar', {
         },
         {
             text : 'Speakers',
-            iconCls : 'x-fa fa-users',
-            ui:'phone-sidebar-speakers-button',
+            iconCls : 'x-fa fa-bullhorn',
+            ui: 'phone-menu-button',
             handler : function (btn) {
                 var panel = Ext.Viewport.down('panel');
                 panel.fireEvent('menuitemselect', btn);
@@ -31,8 +28,8 @@ Ext.define('ThemerContestApp.view.phone.main.Sidebar', {
         },
         {
             text : 'Events',
-            iconCls : 'x-fa fa-users',
-            ui:'phone-sidebar-events-button',
+            iconCls : 'x-fa fa-bolt',
+            ui: 'phone-menu-button',
             handler : function (btn) {
                 var panel = Ext.Viewport.down('panel');
                 panel.fireEvent('menuitemselect', btn);
@@ -41,7 +38,7 @@ Ext.define('ThemerContestApp.view.phone.main.Sidebar', {
         {
             text : 'Attendees',
             iconCls : 'x-fa fa-users',
-            ui:'phone-sidebar-attendees-button',
+            ui: 'phone-menu-button',
             handler : function (btn) {
                 var panel = Ext.Viewport.down('panel');
                 panel.fireEvent('menuitemselect', btn);

@@ -8,6 +8,7 @@ extend : 'Ext.grid.Grid',
     store : 'Event',
     xtype : 'afternoon',
     border : true,
+    margin : '10 10 10 10',
     items : [
         {
             xtype : 'toolbar',
@@ -19,16 +20,16 @@ extend : 'Ext.grid.Grid',
                 '->',
                 {
                     iconCls : 'x-fa fa-plus',
-                    ui:'add-event-afternoon-button',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
-                                xtype : 'panel',
-                                floated : true,
+                                xtype : 'formpanel',
+                                cls: 'form-popup',
                                 modal : true,
                                 hideOnMaskTap : true,
+                                padding : 20,
                                 width : 400,
-                                height : 265,
+                                height : 450,
                                 showAnimation : {
                                     type : 'popIn',
                                     duration : 250,
@@ -40,62 +41,50 @@ extend : 'Ext.grid.Grid',
                                     easing: 'ease-out'
                                 },
                                 centered: true,
+                                title : 'Add Event',
+                                defaults : {
+                                    labelWidth : 120
+                                },
                                 items : [
                                     {
-                                        xtype : 'formpanel',
-                                        padding : 10,
-                                        title : 'Add Event',
-                                        defaults : {
-                                            labelWidth : 120
-                                        },
+                                        xtype : 'textfield',
+                                        label : 'Session Title'
+                                    },
+                                    {
+                                        xtype : 'datepickerfield',
+                                        label : 'Date'
+                                    },
+                                    {
+                                        xtype : 'textfield',
+                                        label : 'Time'
+                                    },
+                                    {
+                                        xtype : 'textfield',
+                                        label : 'Location'
+                                    },
+                                    {
+                                        xtype : 'toolbar',
+                                        docked : 'bottom',
+                                        ui: 'form-toolbar',
                                         items : [
                                             {
-                                                xtype : 'toolbar',
-                                                docked : 'bottom',
-                                                items : [
-                                                    '->',
-                                                    {
-                                                        text : 'Cancel',
-                                                        iconCls : 'x-fa fa-times',
-                                                        scope : this,
-                                                        handler : function () {
-                                                            this.overlay.hide();
-                                                        }
-                                                    },
-                                                    {
-                                                        text : 'Add',
-                                                        scope : this,
-                                                        iconCls : 'x-fa fa-plus',
-                                                        handler : function () {
-                                                            this.overlay.hide();
-                                                        }
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                xtype : 'textfield',
-                                                label : 'Session Title',
-                                                ui:'afternoon-session-title-textfield'
-                                            },
-                                            {
-                                                xtype : 'datepickerfield',
-                                                label : 'Date',
-                                                ui:'afternoon-date-datepickerfield',
-                                                triggers: {
-                                                    expand: {
-                                                        ui: 'afternoon-datetrigger'
-                                                    }
+                                                text : 'Cancel',
+                                                iconCls : 'x-fa fa-times',
+                                                ui: 'attendees-button',
+                                                scope : this,
+                                                handler : function () {
+                                                    this.overlay.hide();
                                                 }
                                             },
+                                            '->',
                                             {
-                                                xtype : 'textfield',
-                                                label : 'Time',
-                                                ui:'afternoon-time-textfield'
-                                            },
-                                            {
-                                                xtype : 'textfield',
-                                                label : 'Location',
-                                                ui:'afternoon-location-textfield'
+                                                text : 'Add',
+                                                scope : this,
+                                                iconCls : 'x-fa fa-plus',
+                                                ui: 'attendees-button',
+                                                handler : function () {
+                                                    this.overlay.hide();
+                                                }
                                             }
                                         ]
                                     }
@@ -112,52 +101,25 @@ extend : 'Ext.grid.Grid',
         {
             text : 'Session Title',
             dataIndex : 'title',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "events-afternoon-grid"
-            }
+            flex : 1
         },
         {
             text : 'Track',
             dataIndex : 'track',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "events-afternoon-grid"
-            }
+            hidden : Ext.os.is.phone ? true : false
         },
         {
             text : 'Day & Time',
             dataIndex : 'time',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "events-afternoon-grid"
-            }
+            hidden : Ext.os.is.phone ? true : false
         },
         {
             text : 'Location',
             dataIndex : 'location',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "events-afternoon-grid"
-            }
+            hidden : Ext.os.is.phone ? true : false
         }
-    ],
-    itemConfig : {
-        ui: 'events-afternoon-grid',
-        
-        "header": {
-            "ui": "events-afternoon-grid"
-        },
-        "headerContainer": {
-            "ui": "events-afternoon-grid"
-        }
-        
-    }
+    ]
 })

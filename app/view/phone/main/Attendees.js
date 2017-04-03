@@ -7,17 +7,14 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
     extend : 'Ext.grid.Grid',
     store : 'Attendee',
     xtype : 'attendees',
+    cls: 'attendees-phone',
     requires : ['Ext.grid.plugin.RowExpander'],
     hideHeaders: true,
     columns : [
         {
             text : 'Name',
             dataIndex : 'name',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "phone-attendees-grid"
-            }
+            flex : 1
         }
     ],
     plugins : {
@@ -27,16 +24,8 @@ Ext.define('ThemerContestApp.view.phone.main.Attendees', {
         body : {
             tpl : [
                 '{job_title}<br />',
-                '<a href="mailto:{email}">{email}</a><br />'
+                '<i class="fa fa-envelope attendee-email-icon" aria-hidden="true"></i><a class="attendee-email" href="mailto:{email}">{email}</a><br />'
             ]
-        },
-        ui: 'phone-attendees-grid',
-        
-        "header": {
-            "ui": "phone-attendees-grid"
-        },
-        "headerContainer": {
-            "ui": "phone-attendees-grid"
         }
     }
 

@@ -4,10 +4,11 @@
  * @email ritesh.patel@sencha.com
  */
 Ext.define('ThemerContestApp.view.main.Speakers', {
-    extend : 'Ext.Panel',
+    extend : 'Ext.Container',
     xtype : 'speakers',
     border : true,
     layout : 'vbox',
+    margin : !Ext.os.is.Phone ? '10 10 10 10' : '0',
     items : !Ext.os.is.Phone ? [
         {
             xtype : 'toolbar',
@@ -18,16 +19,16 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                 '->',
                 {
                     iconCls : 'x-fa fa-plus',
-                    ui:'add-speaker-button',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
-                                xtype : 'panel',
-                                floated : true,
+                                xtype : 'formpanel',
+                                cls: 'form-popup',
                                 modal : true,
                                 hideOnMaskTap : true,
-                                width : 320,
-                                height : 270,
+                                width : 400,
+                                height : 380,
+                                padding : 20,
                                 autoScroll : true,
                                 showAnimation : {
                                     type : 'popIn',
@@ -40,53 +41,47 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                     easing: 'ease-out'
                                 },
                                 centered: true,
+                                title : 'Add Speaker',
+                                defaults : {
+                                    labelWidth : 120
+                                },
                                 items : [
                                     {
-                                        xtype : 'formpanel',
-                                        padding : 10,
-                                        title : 'Add Speaker',
-                                        defaults : {
-                                            labelWidth : 120
-                                        },
+                                        xtype : 'textfield',
+                                        label : 'Name'
+                                    },
+                                    {
+                                        xtype : 'textfield',
+                                        label : 'Job Title'
+                                    },
+                                    {
+                                        xtype : 'textareafield',
+                                        rows : 3,
+                                        label : 'Bio'
+                                    },
+                                     {
+                                        xtype : 'toolbar',
+                                        docked : 'bottom',
                                         items : [
+                                            
                                             {
-                                                xtype : 'toolbar',
-                                                docked : 'bottom',
-                                                items : [
-                                                    '->',
-                                                    {
-                                                        text : 'Cancel',
-                                                        iconCls : 'x-fa fa-times',
-                                                        scope : this,
-                                                        handler : function () {
-                                                            this.overlay.hide();
-                                                        }
-                                                    },
-                                                    {
-                                                        text : 'Add',
-                                                        scope : this,
-                                                        iconCls : 'x-fa fa-plus',
-                                                        handler : function () {
-                                                            this.overlay.hide();
-                                                        }
-                                                    }
-                                                ]
+                                                text : 'Cancel',
+                                                ui: 'attendees-button',
+                                                iconCls : 'x-fa fa-times',
+                                                scope : this,
+                                                handler : function () {
+                                                    this.overlay.hide();
+                                                }
                                             },
+                                            '->',
                                             {
-                                                xtype : 'textfield',
-                                                label : 'Name',
-                                                ui:'add-speaker-name-textfield'
-                                            },
-                                            {
-                                                xtype : 'textfield',
-                                                label : 'Job Title',
-                                                ui:'add-speaker-title-textfield'
-                                            },
-                                            {
-                                                xtype : 'textareafield',
-                                                rows : 2,
-                                                label : 'Bio',
-                                                ui:'add-speaker-bio-textareafield'
+                                                text : 'Add',
+                                                scope : this,
+                                                ui: 'attendees-button',
+                                                iconCls : 'x-fa fa-plus',
+                                                handler : function () {
+                                                    this.overlay.hide();
+                                                }
                                             }
                                         ]
                                     }
@@ -101,10 +96,11 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
         {
             xtype : 'list',
             ui : 'speakers-list',
-            itemTpl : '{name}<br /><span style="color:#a0a0a0">{job_title}</span>',
+            itemTpl : '{name}<br /><span class="speaker-job">{job_title}</span>',
             store : 'Speaker',
             flex : 1,
             height : 450,
+            striped : true,
             scrollable : 'y',
             listeners: {
               itemtap: function(list, index, target, record) {
@@ -112,46 +108,31 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                 main.fireEvent('speakerselect', record);
               }
             },
-            "indexBar": {
-                "ui": "speakers-list"
-            },  
-            "itemConfig": {
-                "ui": "speakers-list",
-                "header": {
-                    "ui": "speakers-list"
-                }
-            },
             onItemDisclosure : function (record, btn) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
-
+                console.log('main ', main);
                 if (main) {
                     main.fireEvent('speakerselect', record, btn);
                 }
+
             }
         }
     ] : [
         {
             xtype : 'list',
             ui : 'speakers-list',
-            itemTpl : '{name}<br /><span style="color:#a0a0a0">{job_title}</span>',
+            cls: 'speakers-list',
+            itemTpl : '{name}<br /><span class="speaker-job">{job_title}</span>',
             store : 'Speaker',
             flex : 1,
             height : 450,
+            striped : true,
             scrollable : 'y',
             listeners: {
               itemtap: function(list, index, target, record) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
                 main.fireEvent('speakerselect', record);
               }
-            },
-            "indexBar": {
-                "ui": "speakers-list"
-            },  
-            "itemConfig": {
-                "ui": "speakers-list",
-                "header": {
-                    "ui": "speakers-list"
-                }
             },
             onItemDisclosure : function (record, btn) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];

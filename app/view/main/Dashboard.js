@@ -36,6 +36,7 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                     title : 'New Registrations',
                     border : true,
                     layout : 'fit',
+                    iconCls : 'x-fa fa-user-plus',
                     items : [
                       {
                       xtype : 'registrations'
@@ -49,17 +50,17 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
             ui : 'all-events',
             flex : 1,
             layout : {
-                type : 'hbox'
+                type : 'fit'
             },
             margin : '0 0 10 0',
             title : 'All Events',
+            iconCls : 'x-fa fa-bolt',
             border : true,
+            width: '100%',
             items : [
                 {
                     xtype : 'events',
-                    header : true,
-                    width : '100%',
-                    border : true
+                    flex: 1
                 }
             ]
         },
@@ -76,6 +77,7 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                     ui : 'to-do-list',
                     width : '75%',
                     title : 'To Do List',
+                    iconCls : 'x-fa fa-check-square',
                     border : true,
                     layout : 'fit',
                     items : [
@@ -94,6 +96,7 @@ Ext.define('ThemerContestApp.view.main.Dashboard', {
                     width : '24%',
                     header : true,
                     title : 'Total Registrations',
+                    iconCls : 'x-fa fa-level-up',
                     width : '24%',
                     border : true,
                     layout : {

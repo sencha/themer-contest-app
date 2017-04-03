@@ -1,0 +1,12 @@
+.attendees-phone {
+
+    .x-expandercell .x-icon-el {
+        height: 1.5em;
+        width: 1.5em;
+        padding-top: 10px;
+        
+        &::before {
+            font-size: 1.75em;
+        }
+    }
+}

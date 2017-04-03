@@ -1,0 +1,25 @@
+.events-phone {
+    .x-gridcell {
+        font-weight: 600;
+    }
+
+    .x-expandercell .x-icon-el {
+        height: 1.5em;
+        width: 1.5em;
+        padding-top: 10px;
+        
+        &::before {
+            font-size: 1.75em;
+        }
+    }
+}
+
+.attendee-email {
+    color: #00796B;
+    text-decoration: none;
+    padding: 0 0 0 5px;
+    
+    &-icon {
+        color: #536DFE;
+    }
+}

@@ -40,6 +40,7 @@ Ext.define('ThemerContestApp.view.main.Main', {
         {
             xtype : 'content',
             reference : 'contentCard',
+            cls : 'content',
             flex : 1
         }
     ]

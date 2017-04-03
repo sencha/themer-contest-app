@@ -7,17 +7,14 @@ Ext.define('ThemerContestApp.view.phone.main.Events', {
     extend : 'Ext.grid.Grid',
     store : 'Event',
     xtype : 'events',
+    cls: 'events-phone',
     requires : ['Ext.grid.plugin.RowExpander'],
     hideHeaders: true,
     columns : [
         {
             text : 'Session Title',
             dataIndex : 'title',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "phone-events-grid"
-            }
+            flex : 1
         }
     ],
     plugins : {
@@ -26,17 +23,9 @@ Ext.define('ThemerContestApp.view.phone.main.Events', {
     itemConfig : {
         body : {
             tpl : [
-                '{time}<br />',
+                '{time}<br /><br />',
                 '{location}<br />'
             ]
-        },
-        ui: 'phone-events-grid',
-        
-        "header": {
-            "ui": "phone-events-grid"
-        },
-        "headerContainer": {
-            "ui": "phone-events-grid"
         }
     }
     
