@@ -7,6 +7,14 @@ Ext.define('ThemerContestApp.view.main.Afternoon', {
 extend : 'Ext.grid.Grid',
     store : 'Event',
     xtype : 'afternoon',
+
+    requires: [
+        'Ext.field.DatePicker',
+        'Ext.field.Text',
+        'Ext.form.Panel'
+    ],
+
+    cls: 'events-bg',
     border : true,
     items : [
         {
@@ -19,7 +27,6 @@ extend : 'Ext.grid.Grid',
                 '->',
                 {
                     iconCls : 'x-fa fa-plus',
-                    ui:'add-event-afternoon-button',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -27,8 +34,6 @@ extend : 'Ext.grid.Grid',
                                 floated : true,
                                 modal : true,
                                 hideOnMaskTap : true,
-                                width : 400,
-                                height : 265,
                                 showAnimation : {
                                     type : 'popIn',
                                     duration : 250,
@@ -74,28 +79,19 @@ extend : 'Ext.grid.Grid',
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Session Title',
-                                                ui:'afternoon-session-title-textfield'
+                                                label : 'Session Title'
                                             },
                                             {
                                                 xtype : 'datepickerfield',
-                                                label : 'Date',
-                                                ui:'afternoon-date-datepickerfield',
-                                                triggers: {
-                                                    expand: {
-                                                        ui: 'afternoon-datetrigger'
-                                                    }
-                                                }
+                                                label : 'Date'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Time',
-                                                ui:'afternoon-time-textfield'
+                                                label : 'Time'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Location',
-                                                ui:'afternoon-location-textfield'
+                                                label : 'Location'
                                             }
                                         ]
                                     }
@@ -112,52 +108,25 @@ extend : 'Ext.grid.Grid',
         {
             text : 'Session Title',
             dataIndex : 'title',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "events-afternoon-grid"
-            }
+            flex : 1
         },
         {
             text : 'Track',
             dataIndex : 'track',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "events-afternoon-grid"
-            }
+            hidden : Ext.os.is.phone ? true : false
         },
         {
             text : 'Day & Time',
             dataIndex : 'time',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "events-afternoon-grid"
-            }
+            hidden : Ext.os.is.phone ? true : false
         },
         {
             text : 'Location',
             dataIndex : 'location',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "events-afternoon-grid"
-            }
+            hidden : Ext.os.is.phone ? true : false
         }
-    ],
-    itemConfig : {
-        ui: 'events-afternoon-grid',
-        
-        "header": {
-            "ui": "events-afternoon-grid"
-        },
-        "headerContainer": {
-            "ui": "events-afternoon-grid"
-        }
-        
-    }
+    ]
 })

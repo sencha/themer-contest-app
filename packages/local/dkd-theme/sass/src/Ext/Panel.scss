@@ -1,0 +1,16 @@
+
+@include panel-ui ($ui: 'days-to-conference',$body-padding: 0px 0px 0px 0px, $body-color: #482718,$body-font-size: 150px, $body-background-color: rgba(255,255,255,0.7));
+@include panel-ui ($ui: 'new-registrations', $body-background-color: rgba(255,255,255,0.7));
+@include panel-ui ($ui: 'all-events', $body-background-color: rgba(255,255,255,0.7));
+@include panel-ui ($ui: 'to-do-list', $body-background-color: rgba(255,255,255,0.7));
+@include panel-ui ($ui: 'total-registrations', $body-background-color: rgba(255,255,255,0.7));
+
+.x-msgbox,
+.x-container.x-floated,
+.x-panel.x-floated {
+  background-color: #fff;
+
+  .x-panel-title-text {
+    color: #fff;
+  }
+}
