@@ -19,22 +19,7 @@ Ext.define('ThemerContestApp.view.main.DoList', {
         },
         {
             dataIndex : 'name',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "all-dolist-grid"
-            }
+            flex : 1
         }
-    ],
-    itemConfig : {
-        ui: 'all-dolist-grid',
-        
-        "header": {
-            "ui": "all-dolist-grid"
-        },
-        "headerContainer": {
-            "ui": "all-dolist-grid"
-        }
-        
-    }
+    ]
 });

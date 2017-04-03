@@ -6,7 +6,16 @@
 Ext.define('ThemerContestApp.view.main.Speakers', {
     extend : 'Ext.Panel',
     xtype : 'speakers',
-    border : true,
+
+    requires: [
+        'Ext.dataview.List',
+        'Ext.field.Text',
+        'Ext.field.TextArea',
+        'Ext.form.Panel',
+        'Ext.layout.VBox'
+    ],
+
+    border : false,
     layout : 'vbox',
     items : !Ext.os.is.Phone ? [
         {
@@ -18,7 +27,6 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                 '->',
                 {
                     iconCls : 'x-fa fa-plus',
-                    ui:'add-speaker-button',
                     handler : function (btn) {
                         if (!this.overlay) {
                             this.overlay = Ext.Viewport.add({
@@ -26,8 +34,6 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                 floated : true,
                                 modal : true,
                                 hideOnMaskTap : true,
-                                width : 320,
-                                height : 270,
                                 autoScroll : true,
                                 showAnimation : {
                                     type : 'popIn',
@@ -74,19 +80,16 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Name',
-                                                ui:'add-speaker-name-textfield'
+                                                label : 'Name'
                                             },
                                             {
                                                 xtype : 'textfield',
-                                                label : 'Job Title',
-                                                ui:'add-speaker-title-textfield'
+                                                label : 'Job Title'
                                             },
                                             {
                                                 xtype : 'textareafield',
                                                 rows : 2,
-                                                label : 'Bio',
-                                                ui:'add-speaker-bio-textareafield'
+                                                label : 'Bio'
                                             }
                                         ]
                                     }
@@ -100,8 +103,8 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
         },
         {
             xtype : 'list',
-            ui : 'speakers-list',
-            itemTpl : '{name}<br /><span style="color:#a0a0a0">{job_title}</span>',
+            cls : 'speakers-list',
+            itemTpl : '<span class="speaker-name">{name}</span><br /><span class="speaker-job-title">{job_title}</span>',
             store : 'Speaker',
             flex : 1,
             height : 450,
@@ -112,28 +115,20 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                 main.fireEvent('speakerselect', record);
               }
             },
-            "indexBar": {
-                "ui": "speakers-list"
-            },  
-            "itemConfig": {
-                "ui": "speakers-list",
-                "header": {
-                    "ui": "speakers-list"
-                }
-            },
             onItemDisclosure : function (record, btn) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
-
+                console.log('main ', main);
                 if (main) {
                     main.fireEvent('speakerselect', record, btn);
                 }
+
             }
         }
     ] : [
         {
             xtype : 'list',
-            ui : 'speakers-list',
-            itemTpl : '{name}<br /><span style="color:#a0a0a0">{job_title}</span>',
+					  cls : 'speakers-list',
+            itemTpl : '<span class="speaker-name">{name}</span><br /><span class="speaker-job-title">{job_title}</span>',
             store : 'Speaker',
             flex : 1,
             height : 450,
@@ -143,15 +138,6 @@ Ext.define('ThemerContestApp.view.main.Speakers', {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];
                 main.fireEvent('speakerselect', record);
               }
-            },
-            "indexBar": {
-                "ui": "speakers-list"
-            },  
-            "itemConfig": {
-                "ui": "speakers-list",
-                "header": {
-                    "ui": "speakers-list"
-                }
             },
             onItemDisclosure : function (record, btn) {
                 var main = Ext.ComponentQuery.query('[itemId=app-main]')[0];

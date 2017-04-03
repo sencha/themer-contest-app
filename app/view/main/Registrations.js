@@ -13,41 +13,18 @@ Ext.define('ThemerContestApp.view.main.Registrations', {
         {
             text : 'Name',
             dataIndex : 'name',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "new-registrations-grid"
-            }
+            flex : 1
         },
         {
             text : 'Job Title',
             dataIndex : 'title',
             flex : 1,
-            hidden : Ext.os.is.phone ? true : false,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "new-registrations-grid"
-            }
+            hidden : Ext.os.is.phone ? true : false
         },
         {
             text : 'Company',
             dataIndex : 'company',
-            flex : 1,
-            "cell": {
-                "xtype": "gridcell",
-                "ui": "new-registrations-grid"
-            }
+            flex : 1
         }
-    ],
-    itemConfig : {
-        ui: 'new-registrations-grid',
-        
-        "header": {
-            "ui": "new-registrations-grid"
-        },
-        "headerContainer": {
-            "ui": "new-registrations-grid"
-        }
-        
-    }
+    ]
 });

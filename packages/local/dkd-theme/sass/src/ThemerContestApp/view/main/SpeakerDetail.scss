@@ -1,0 +1,32 @@
+.speakers-tabs {
+  background-color: rgba(255,255,255, 0.7);
+
+  .speaker-tab {
+    padding: 10px;
+
+    .speaker-name {
+      font-style: normal;
+      font-variant-ligatures: normal;
+      font-variant-caps: normal;
+      font-variant-numeric: normal;
+      font-weight: 600;
+      font-stretch: normal;
+      font-size: 1.5rem;
+      line-height: 1.44445em;
+      font-family: Merriweather, sans-serif;
+    }
+
+    .speaker-title,
+    .speaker-desc{
+      font-style: normal;
+      font-variant-ligatures: normal;
+      font-variant-caps: normal;
+      font-variant-numeric: normal;
+      font-weight: 300;
+      font-stretch: normal;
+      font-size: 1.1rem;
+      font-family: Merriweather, sans-serif;
+    }
+
+  }
+}
